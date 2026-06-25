@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>מערכת סיווג תמונות - אינטראקטיבית</h1>
+<p>עמוד זה משמש להדגמת כל שלבי הניסוי עבור סרטון ההגשה [cite: 11-12].</p>
+
+<div class="section">
+    <h3>1. סטטוס השרת ומונים [cite: 16, 19]</h3>
+    <button onclick="checkStatus()">בדוק סטטוס נוכחי</button>
+    <pre id="status-result">לחץ על הכפתור כדי לראות סטטוס...</pre>
+</div>
+
+<div class="section">
+    <h3>2. יצירת חשבון (Register) [cite: 14]</h3>
+    <input type="text" id="reg-user" placeholder="שם משתמש">
+    <input type="password" id="reg-pass" placeholder="סיסמה">
+    <button onclick="handleAuth('/register', 'reg-user', 'reg-pass')">הרשם</button>
+</div>
+
+<div class="section">
+    <h3>3. התחברות לחשבון (Login) [cite: 15]</h3>
+    <input type="text" id="login-user" placeholder="שם משתמש">
+    <input type="password" id="login-pass" placeholder="סיסמה">
+    <button onclick="handleAuth('/login', 'login-user', 'login-pass')">התחבר</button>
+</div>
+
+<div class="section">
+    <h3>4. העלאת תמונה לסיווג (Success/Failure Cases) [cite: 17-18]</h3>
+    <input type="file" id="image-file">
+    <button onclick="uploadImage()">שלח תמונה למודל</button>
+    <pre id="classifier-result">תוצאות הסיווג יופיעו כאן...</pre>
+</div>
+
+<div class="section">
+    <h3>5. התנתקות (Logout) [cite: 20]</h3>
+    <input type="text" id="logout-user" placeholder="שם משתמש לניתוק">
+    <button onclick="handleLogout()">התנתק</button>
+</div>
+
+<script>
+    // פונקציה לבדיקת הסטטוס מה-API [cite: 16, 19]
+    async function checkStatus() {
+        const res = await fetch('/status');
+        const data = await res.json();
+        document.getElementById('status-result').innerText = JSON.stringify(data, null, 2);
+    }
+
+    // פונקציה לאותנטיקציה (הרשמה / התחברות) [cite: 14-15]
+    async function handleAuth(endpoint, userId, passId) {
+        const username = document.getElementById(userId).value;
+        const password = document.getElementById(passId).value;
+        const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        alert(data.message || data.error);
+    }
+
+    // פונקציה להתנתקות [cite: 20]
+    async function handleLogout() {
+        const username = document.getElementById('logout-user').value;
+        const res = await fetch('/logout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username })
+        });
+        const data = await res.json();
+        alert(data.message || data.error);
+    }
+
+    // פונקציה להעלאת קובץ (Multipart Form Data) [cite: 42, 480]
+    async function uploadImage() {
+        const fileInput = document.getElementById('image-file');
+        if (!fileInput.files[0]) return alert("אנא בחר קובץ תחילה");
+
+        const formData = new FormData();
+        formData.append('image', fileInput.files[0]);
+
+        const res = await fetch('/classifier', { method: 'POST', body: formData });
+        const data = await res.json();
+        document.getElementById('classifier-result').innerText = JSON.stringify(data, null, 2);
+    }
+</script>
+{% endblock %}
