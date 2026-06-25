@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}PictureServer{% endblock %}
+
+{% block content %}
+<div class="card" id="card">
+
+    <!-- Permanent header -->
+    <div class="card-header">
+        <div class="logo-mark">
+            <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="40" height="40" rx="10" stroke="url(#g)" stroke-width="2"/>
+                <circle cx="17" cy="19" r="4" fill="url(#g)" opacity="0.9"/>
+                <path d="M6 36 L16 24 L22 30 L30 20 L42 36"
+                      stroke="url(#g)" stroke-width="2"
+                      stroke-linejoin="round" stroke-linecap="round"/>
+                <defs>
+                    <linearGradient id="g" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#a78bfa"/>
+                        <stop offset="100%" stop-color="#7c3aed"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <h1 class="app-name">PictureServer</h1>
+    </div>
+
+    <!-- ── Login panel ────────────────────────────────────── -->
+    <div class="panel active" data-panel="login">
+        <nav class="tabs" aria-label="Auth mode">
+            <button class="tab active" data-target="login">Sign In</button>
+            <button class="tab" data-target="register">Register</button>
+        </nav>
+        <form class="auth-form" id="login-form" novalidate>
+            <div class="field">
+                <input type="text" id="login-username"
+                       placeholder="Username" autocomplete="username">
+            </div>
+            <div class="field">
+                <input type="password" id="login-password"
+                       placeholder="Password" autocomplete="current-password">
+            </div>
+            <p class="msg" id="login-msg" role="alert"></p>
+            <button type="submit" class="btn btn-primary" id="login-btn">
+                <span class="btn-label">Sign In</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+        </form>
+    </div>
+
+    <!-- ── Register panel ────────────────────────────────── -->
+    <div class="panel" data-panel="register">
+        <nav class="tabs" aria-label="Auth mode">
+            <button class="tab" data-target="login">Sign In</button>
+            <button class="tab active" data-target="register">Register</button>
+        </nav>
+        <form class="auth-form" id="register-form" novalidate>
+            <div class="field">
+                <input type="text" id="reg-username"
+                       placeholder="Username" autocomplete="username">
+            </div>
+            <div class="field">
+                <input type="password" id="reg-password"
+                       placeholder="Password" autocomplete="new-password">
+            </div>
+            <p class="msg" id="register-msg" role="alert"></p>
+            <button type="submit" class="btn btn-primary" id="register-btn">
+                <span class="btn-label">Create Account</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+        </form>
+    </div>
+
+    <!-- ── Logged-in panel ───────────────────────────────── -->
+    <div class="panel" data-panel="loggedin">
+
+        <div class="user-header">
+            <div class="user-info">
+                <p class="welcome-label">Welcome back</p>
+                <p class="welcome-name" id="username-display"></p>
+            </div>
+            <button class="btn btn-ghost btn--sm" id="logout-btn">
+                <span class="btn-label">Sign Out</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <div class="divider divider--full"></div>
+
+        <!-- Drop zone -->
+        <div class="drop-zone" id="drop-zone"
+             tabindex="0" role="button"
+             aria-label="Choose an image to classify">
+            <!-- No accept filter: any file can be chosen so the failure case
+                 (uploading an invalid image) can be demonstrated end-to-end. -->
+            <input type="file" id="file-input" hidden>
+
+            <div class="drop-placeholder" id="drop-placeholder">
+                <svg class="drop-icon" width="36" height="36" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="1.5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 16 12 12 8 16"/>
+                    <line x1="12" y1="12" x2="12" y2="21"/>
+                    <path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/>
+                </svg>
+                <p class="drop-primary">
+                    Drop an image or <span class="drop-link">browse</span>
+                </p>
+                <p class="drop-secondary">.png · .jpeg</p>
+            </div>
+
+            <div class="drop-preview" id="drop-preview" hidden>
+                <img class="preview-thumb" id="preview-thumb" alt="Selected image">
+                <div class="preview-overlay">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    Change image
+                </div>
+            </div>
+        </div>
+
+        <!-- Classify -->
+        <button class="btn btn-primary" id="classify-btn" disabled>
+            <span class="btn-label">Classify Image</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+
+        <!-- Analyzing indicator -->
+        <div class="analyzing" id="analyzing" hidden>
+            <div class="dots">
+                <span></span><span></span><span></span>
+            </div>
+            <p class="analyzing-text">Analyzing image</p>
+        </div>
+
+        <!-- Inline error -->
+        <p class="msg" id="classify-msg" role="alert"></p>
+
+        <!-- Results -->
+        <div class="results" id="results" hidden></div>
+
+    </div>
+
+</div>
+
+<!-- ── Status badge (fixed, bottom-right, logged-in only) ── -->
+<aside class="status-badge" id="status-badge" hidden aria-label="Server status">
+    <div class="status-top">
+        <span class="status-dot" id="status-dot"></span>
+        <span class="status-health" id="status-health">—</span>
+        <button class="status-refresh-btn" id="status-refresh" title="Refresh status">
+            <svg class="refresh-icon" width="13" height="13" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"/>
+                <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
+            </svg>
+        </button>
+    </div>
+    <div class="status-stats">
+        <span id="stat-uptime">—</span>
+        <span class="stat-sep">·</span>
+        <span class="stat-ok" id="stat-success">✓ —</span>
+        <span class="stat-sep">·</span>
+        <span class="stat-err" id="stat-fail">✗ —</span>
+    </div>
+</aside>
+{% endblock %}

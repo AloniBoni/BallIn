@@ -1,3 +1,5 @@
 settings.local.json
 CLAUDE.md
 .claude/
+.idea/
+.venv/

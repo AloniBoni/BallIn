@@ -25,7 +25,7 @@ resnet18(weights=ResNet18_Weights.DEFAULT)
 print("ResNet18 weights cached.")
 EOF
 
-COPY ../.. .
+COPY .. .
 
 EXPOSE 5000
 
