@@ -3,3 +3,13 @@ CLAUDE.md
 .claude/
 .idea/
 .venv/
+docs/
+
+# Local SQLite data store (never commit the DB file)
+*.db
+*.sqlite
+web/data/
+
+# Python bytecode cache
+__pycache__/
+*.pyc

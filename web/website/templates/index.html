@@ -1,19 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}PictureServer{% endblock %}
+{% block title %}Ball-In{% endblock %}
 
 {% block content %}
-<div class="card" id="card">
 
-    <!-- Permanent header -->
+<!-- ════════════════════════════════════════════════════════════
+     AUTH (login / register) — the centered card. Shown when logged out.
+     ════════════════════════════════════════════════════════════ -->
+<div class="auth-modal" id="auth-modal" hidden>
+<div class="auth-backdrop" id="auth-backdrop"></div>
+<div class="card" id="card">
+    <button class="auth-close" id="auth-close" type="button" aria-label="Close">&times;</button>
+
     <div class="card-header">
         <div class="logo-mark">
             <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="4" y="4" width="40" height="40" rx="10" stroke="url(#g)" stroke-width="2"/>
-                <circle cx="17" cy="19" r="4" fill="url(#g)" opacity="0.9"/>
-                <path d="M6 36 L16 24 L22 30 L30 20 L42 36"
-                      stroke="url(#g)" stroke-width="2"
-                      stroke-linejoin="round" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="11" stroke="url(#g)" stroke-width="2"/>
+                <path d="M13 24 H35 M24 13 V35 M16 16 Q24 24 16 32 M32 16 Q24 24 32 32"
+                      stroke="url(#g)" stroke-width="1.6"
+                      stroke-linejoin="round" stroke-linecap="round" opacity="0.9"/>
                 <defs>
                     <linearGradient id="g" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
                         <stop offset="0%" stop-color="#a78bfa"/>
@@ -22,10 +28,11 @@
                 </defs>
             </svg>
         </div>
-        <h1 class="app-name">PictureServer</h1>
+        <h1 class="app-name">Ball-In</h1>
+        <p class="tagline">Player-discovery network</p>
     </div>
 
-    <!-- ── Login panel ────────────────────────────────────── -->
+    <!-- Login -->
     <div class="panel active" data-panel="login">
         <nav class="tabs" aria-label="Auth mode">
             <button class="tab active" data-target="login">Sign In</button>
@@ -33,12 +40,10 @@
         </nav>
         <form class="auth-form" id="login-form" novalidate>
             <div class="field">
-                <input type="text" id="login-username"
-                       placeholder="Username" autocomplete="username">
+                <input type="text" id="login-username" placeholder="Username" autocomplete="username">
             </div>
             <div class="field">
-                <input type="password" id="login-password"
-                       placeholder="Password" autocomplete="current-password">
+                <input type="password" id="login-password" placeholder="Password" autocomplete="current-password">
             </div>
             <p class="msg" id="login-msg" role="alert"></p>
             <button type="submit" class="btn btn-primary" id="login-btn">
@@ -48,7 +53,7 @@
         </form>
     </div>
 
-    <!-- ── Register panel ────────────────────────────────── -->
+    <!-- Register -->
     <div class="panel" data-panel="register">
         <nav class="tabs" aria-label="Auth mode">
             <button class="tab" data-target="login">Sign In</button>
@@ -56,13 +61,41 @@
         </nav>
         <form class="auth-form" id="register-form" novalidate>
             <div class="field">
-                <input type="text" id="reg-username"
-                       placeholder="Username" autocomplete="username">
+                <input type="text" id="reg-username" placeholder="Username" autocomplete="username">
             </div>
             <div class="field">
-                <input type="password" id="reg-password"
-                       placeholder="Password" autocomplete="new-password">
+                <input type="password" id="reg-password" placeholder="Password" autocomplete="new-password">
             </div>
+
+            <div class="role-toggle" role="radiogroup" aria-label="Account type">
+                <button type="button" class="role-btn active" data-role="player" role="radio" aria-checked="true">Player</button>
+                <button type="button" class="role-btn" data-role="scout" role="radio" aria-checked="false">Scout</button>
+            </div>
+
+            <div class="role-fields" id="player-fields">
+                <div class="stat-grid">
+                    <label class="stat-field"><span>Height (cm)</span><input type="number" step="any" data-field="height" placeholder="206"></label>
+                    <label class="stat-field"><span>Position</span>
+                        <select data-field="position">
+                            <option value="PG">PG</option><option value="SG">SG</option>
+                            <option value="SF" selected>SF</option><option value="PF">PF</option><option value="C">C</option>
+                        </select>
+                    </label>
+                    <label class="stat-field"><span>PTS</span><input type="number" step="any" data-field="PTS" placeholder="27.1"></label>
+                    <label class="stat-field"><span>REB</span><input type="number" step="any" data-field="REB" placeholder="7.5"></label>
+                    <label class="stat-field"><span>AST</span><input type="number" step="any" data-field="AST" placeholder="7.3"></label>
+                    <label class="stat-field"><span>FG%</span><input type="number" step="any" data-field="FG_pct" placeholder="0.54"></label>
+                    <label class="stat-field"><span>3PT%</span><input type="number" step="any" data-field="3PT_pct" placeholder="0.38"></label>
+                    <label class="stat-field"><span>Usage</span><input type="number" step="any" data-field="usage" placeholder="31.6"></label>
+                    <label class="stat-field stat-field--wide"><span>Defensive rating</span><input type="number" step="any" data-field="defensive_rating" placeholder="108"></label>
+                </div>
+            </div>
+
+            <div class="role-fields" id="scout-fields" hidden>
+                <div class="field"><input type="text" id="reg-org" placeholder="Organization (e.g. Boston Celtics)"></div>
+                <div class="field"><input type="text" id="reg-need" placeholder="Saved need (e.g. 3&D wing)"></div>
+            </div>
+
             <p class="msg" id="register-msg" role="alert"></p>
             <button type="submit" class="btn btn-primary" id="register-btn">
                 <span class="btn-label">Create Account</span>
@@ -71,84 +104,264 @@
         </form>
     </div>
 
-    <!-- ── Logged-in panel ───────────────────────────────── -->
-    <div class="panel" data-panel="loggedin">
+</div>
+</div>
 
-        <div class="user-header">
-            <div class="user-info">
-                <p class="welcome-label">Welcome back</p>
-                <p class="welcome-name" id="username-display"></p>
-            </div>
-            <button class="btn btn-ghost btn--sm" id="logout-btn">
-                <span class="btn-label">Sign Out</span>
-                <span class="btn-spinner" aria-hidden="true"></span>
+<!-- ════════════════════════════════════════════════════════════
+     APP SHELL — shown when logged in. Header + 4 pages + fixed nav.
+     Interface only; pages are not wired to data yet (except Profile,
+     which loads the real /profile of the signed-in user).
+     ════════════════════════════════════════════════════════════ -->
+<div class="app" id="app">
+
+    <!-- Top bar -->
+    <header class="app-header">
+        <div class="app-brand">
+            <svg width="26" height="26" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="20" stroke="url(#g2)" stroke-width="2.5"/>
+                <path d="M9 24 H39 M24 9 V39 M14 14 Q24 24 14 34 M34 14 Q24 24 34 34"
+                      stroke="url(#g2)" stroke-width="1.8" stroke-linecap="round"/>
+                <defs><linearGradient id="g2" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#7c3aed"/>
+                </linearGradient></defs>
+            </svg>
+            <span class="app-wordmark">Ball-In</span>
+            <button class="signin-btn" id="signin-btn" type="button">
+                <span class="signin-shine" aria-hidden="true"></span>
+                Sign In
             </button>
         </div>
+        <span class="page-title" id="page-title">Feed</span>
+    </header>
 
-        <div class="divider divider--full"></div>
+    <!-- Scrollable page area -->
+    <main class="app-content">
 
-        <!-- Drop zone -->
-        <div class="drop-zone" id="drop-zone"
-             tabindex="0" role="button"
-             aria-label="Choose an image to classify">
-            <!-- No accept filter: any file can be chosen so the failure case
-                 (uploading an invalid image) can be demonstrated end-to-end. -->
-            <input type="file" id="file-input" hidden>
-
-            <div class="drop-placeholder" id="drop-placeholder">
-                <svg class="drop-icon" width="36" height="36" viewBox="0 0 24 24"
-                     fill="none" stroke="currentColor" stroke-width="1.5"
-                     stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="16 16 12 12 8 16"/>
-                    <line x1="12" y1="12" x2="12" y2="21"/>
-                    <path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/>
-                </svg>
-                <p class="drop-primary">
-                    Drop an image or <span class="drop-link">browse</span>
-                </p>
-                <p class="drop-secondary">.png · .jpeg</p>
+        <!-- ───── FEED ───── -->
+        <section class="page active" data-page="feed">
+            <div class="composer">
+                <div class="avatar avatar--md" id="composer-avatar">?</div>
+                <input class="composer-input" type="text" placeholder="Share an update with the network…">
+                <button class="btn btn-primary btn--sm" disabled>Post</button>
             </div>
 
-            <div class="drop-preview" id="drop-preview" hidden>
-                <img class="preview-thumb" id="preview-thumb" alt="Selected image">
-                <div class="preview-overlay">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-                        <polyline points="17 8 12 3 7 8"/>
-                        <line x1="12" y1="3" x2="12" y2="15"/>
-                    </svg>
-                    Change image
+            <article class="post">
+                <div class="post-head">
+                    <div class="avatar avatar--md" style="--a:#f472b6;--b:#db2777">DW</div>
+                    <div class="post-id">
+                        <span class="post-author">Derrick White <span class="role-chip">player</span></span>
+                        <span class="post-time">2h ago</span>
+                    </div>
+                </div>
+                <p class="post-body">Logged a new defensive rating after last night's film session. Comparables shifted toward Gary Payton II — love that.</p>
+                <div class="post-actions">
+                    <button class="post-action" aria-label="Like">♥ <span>128</span></button>
+                    <button class="post-action" aria-label="Comment">💬 <span>14</span></button>
+                    <button class="post-action" aria-label="Share">↗</button>
+                </div>
+            </article>
+
+            <article class="post">
+                <div class="post-head">
+                    <div class="avatar avatar--md" style="--a:#34d399;--b:#059669">BC</div>
+                    <div class="post-id">
+                        <span class="post-author">Boston Celtics <span class="role-chip" data-role="scout">scout</span></span>
+                        <span class="post-time">5h ago</span>
+                    </div>
+                </div>
+                <p class="post-body">Updated our saved need to "3&D wing". 7 players in-network already match the profile. Reaching out this week.</p>
+                <div class="post-actions">
+                    <button class="post-action" aria-label="Like">♥ <span>92</span></button>
+                    <button class="post-action" aria-label="Comment">💬 <span>8</span></button>
+                    <button class="post-action" aria-label="Share">↗</button>
+                </div>
+            </article>
+
+            <article class="post">
+                <div class="post-head">
+                    <div class="avatar avatar--md" style="--a:#60a5fa;--b:#2563eb">AC</div>
+                    <div class="post-id">
+                        <span class="post-author">Alex Caruso <span class="role-chip">player</span></span>
+                        <span class="post-time">1d ago</span>
+                    </div>
+                </div>
+                <p class="post-body">3 scouts are looking for a profile like mine this month. The fit-scorer is no joke 🏀</p>
+                <div class="post-actions">
+                    <button class="post-action" aria-label="Like">♥ <span>205</span></button>
+                    <button class="post-action" aria-label="Comment">💬 <span>23</span></button>
+                    <button class="post-action" aria-label="Share">↗</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- ───── SEARCH ───── -->
+        <section class="page" data-page="search">
+            <div class="search-bar">
+                <svg class="search-ico" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input class="search-input" id="search-input" type="search" placeholder="Search players, scouts, archetypes…">
+            </div>
+
+            <p class="section-label">Suggested</p>
+            <div class="user-row">
+                <div class="avatar avatar--md" style="--a:#60a5fa;--b:#2563eb">AC</div>
+                <div class="user-id"><span class="user-name">Alex Caruso</span><span class="user-sub">player · 3&D wing</span></div>
+                <button class="btn btn-ghost btn--sm">View</button>
+            </div>
+            <div class="user-row">
+                <div class="avatar avatar--md" style="--a:#fbbf24;--b:#d97706">GP</div>
+                <div class="user-id"><span class="user-name">Gary Payton II</span><span class="user-sub">player · 3&D wing</span></div>
+                <button class="btn btn-ghost btn--sm">View</button>
+            </div>
+            <div class="user-row">
+                <div class="avatar avatar--md" style="--a:#34d399;--b:#059669">LA</div>
+                <div class="user-id"><span class="user-name">LA Lakers</span><span class="user-sub">scout · stretch big</span></div>
+                <button class="btn btn-ghost btn--sm">View</button>
+            </div>
+            <div class="user-row">
+                <div class="avatar avatar--md" style="--a:#f472b6;--b:#db2777">JH</div>
+                <div class="user-id"><span class="user-name">Jrue Holiday</span><span class="user-sub">player · pass-first guard</span></div>
+                <button class="btn btn-ghost btn--sm">View</button>
+            </div>
+        </section>
+
+        <!-- ───── DMs ───── -->
+        <section class="page" data-page="dm">
+            <div class="dm-list">
+                <div class="dm-item">
+                    <div class="avatar avatar--md" style="--a:#34d399;--b:#059669">BC</div>
+                    <div class="dm-id">
+                        <span class="dm-name">Boston Celtics</span>
+                        <span class="dm-preview">Are you available for a call this week?</span>
+                    </div>
+                    <div class="dm-meta"><span class="dm-time">2m</span><span class="dm-unread"></span></div>
+                </div>
+                <div class="dm-item">
+                    <div class="avatar avatar--md" style="--a:#60a5fa;--b:#2563eb">DW</div>
+                    <div class="dm-id">
+                        <span class="dm-name">Derrick White</span>
+                        <span class="dm-preview">Thanks for the comparables breakdown!</span>
+                    </div>
+                    <div class="dm-meta"><span class="dm-time">1h</span></div>
+                </div>
+                <div class="dm-item">
+                    <div class="avatar avatar--md" style="--a:#fbbf24;--b:#d97706">LA</div>
+                    <div class="dm-id">
+                        <span class="dm-name">LA Lakers</span>
+                        <span class="dm-preview">You: I'll send over the stat sheet.</span>
+                    </div>
+                    <div class="dm-meta"><span class="dm-time">3d</span></div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Classify -->
-        <button class="btn btn-primary" id="classify-btn" disabled>
-            <span class="btn-label">Classify Image</span>
-            <span class="btn-spinner" aria-hidden="true"></span>
-        </button>
+        <!-- ───── PROFILE ───── -->
+        <section class="page" data-page="profile">
 
-        <!-- Analyzing indicator -->
-        <div class="analyzing" id="analyzing" hidden>
-            <div class="dots">
-                <span></span><span></span><span></span>
+            <!-- Logged-out prompt -->
+            <div class="profile-guest" id="profile-guest">
+                <div class="avatar avatar--xl">?</div>
+                <p class="guest-title">You're not signed in</p>
+                <p class="guest-sub">Sign in to view and edit your Ball-In profile, archetype and matches.</p>
+                <button class="btn btn-primary" id="profile-signin-btn" type="button">Sign In</button>
             </div>
-            <p class="analyzing-text">Analyzing image</p>
-        </div>
 
-        <!-- Inline error -->
-        <p class="msg" id="classify-msg" role="alert"></p>
+            <!-- Authed content -->
+            <div id="profile-authed" hidden>
+            <div class="profile-hero">
+                <div class="avatar avatar--xl" id="profile-avatar">?</div>
+                <div class="profile-headline">
+                    <span class="profile-username" id="username-display"></span>
+                    <span class="role-chip" id="role-chip"></span>
+                </div>
+            </div>
 
-        <!-- Results -->
-        <div class="results" id="results" hidden></div>
+            <!-- View mode -->
+            <div id="profile-view-wrap">
+                <div class="profile-view" id="profile-view"></div>
+                <!-- Players only: reverse-match interest + KNN comparables -->
+                <div id="profile-extra"></div>
+                <div class="profile-actions">
+                    <button class="btn btn-primary" id="edit-profile-btn">Edit Profile</button>
+                    <button class="btn btn-ghost" id="logout-btn">
+                        <span class="btn-label">Sign Out</span>
+                        <span class="btn-spinner" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
 
-    </div>
+            <!-- Edit mode (interface only; prefilled from the loaded profile) -->
+            <form class="profile-edit" id="profile-edit" hidden>
+                <div class="role-fields" id="edit-player-fields">
+                    <div class="stat-grid">
+                        <label class="stat-field"><span>Height (cm)</span><input type="number" step="any" data-edit="height"></label>
+                        <label class="stat-field"><span>Position</span>
+                            <select data-edit="position">
+                                <option value="PG">PG</option><option value="SG">SG</option>
+                                <option value="SF">SF</option><option value="PF">PF</option><option value="C">C</option>
+                            </select>
+                        </label>
+                        <label class="stat-field"><span>PTS</span><input type="number" step="any" data-edit="PTS"></label>
+                        <label class="stat-field"><span>REB</span><input type="number" step="any" data-edit="REB"></label>
+                        <label class="stat-field"><span>AST</span><input type="number" step="any" data-edit="AST"></label>
+                        <label class="stat-field"><span>FG%</span><input type="number" step="any" data-edit="FG_pct"></label>
+                        <label class="stat-field"><span>3PT%</span><input type="number" step="any" data-edit="3PT_pct"></label>
+                        <label class="stat-field"><span>Usage</span><input type="number" step="any" data-edit="usage"></label>
+                        <label class="stat-field stat-field--wide"><span>Defensive rating</span><input type="number" step="any" data-edit="defensive_rating"></label>
+                    </div>
+                </div>
+                <div class="role-fields" id="edit-scout-fields" hidden>
+                    <label class="stat-field stat-field--wide"><span>Organization</span><input type="text" data-edit="org"></label>
+                    <label class="stat-field stat-field--wide"><span>Saved need</span><input type="text" data-edit="need"></label>
+                </div>
+                <p class="msg" id="edit-msg" role="alert"></p>
+                <div class="profile-actions">
+                    <button type="submit" class="btn btn-primary" id="save-profile-btn">Save Changes</button>
+                    <button type="button" class="btn btn-ghost" id="cancel-edit-btn">Cancel</button>
+                </div>
+            </form>
+            </div><!-- /#profile-authed -->
+        </section>
+
+    </main>
+
+    <!-- Persistent bottom navigation (IG/Facebook-style) -->
+    <nav class="nav-bar" aria-label="Primary">
+        <button class="nav-item active" data-nav="feed" aria-label="Feed">
+            <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/>
+            </svg>
+            <span class="nav-label">Feed</span>
+        </button>
+        <button class="nav-item" data-nav="search" aria-label="Search">
+            <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <span class="nav-label">Search</span>
+        </button>
+        <button class="nav-item" data-nav="dm" aria-label="Messages">
+            <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+            <span class="nav-label">DMs</span>
+        </button>
+        <button class="nav-item" data-nav="profile" aria-label="Profile">
+            <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0114 0v1"/>
+            </svg>
+            <span class="nav-label">Profile</span>
+        </button>
+    </nav>
 
 </div>
 
-<!-- ── Status badge (fixed, bottom-right, logged-in only) ── -->
+<!-- Status badge (logged-in only) -->
 <aside class="status-badge" id="status-badge" hidden aria-label="Server status">
     <div class="status-top">
         <span class="status-dot" id="status-dot"></span>
