@@ -6,3 +6,14 @@ services:
     ports:
       - "5000:5000"
     restart: unless-stopped
+    environment:
+      # Stable secret so JWTs stay valid across restarts and multiple workers.
+      # CHANGE THIS before any real deployment.
+      - JWT_SECRET=ball-in-dev-secret-change-me
+      # SQLite file on the mounted volume so registered users survive restarts.
+      - DATABASE_URL=sqlite:////app/data/ballin.db
+    volumes:
+      - ballin-data:/app/data
+
+volumes:
+  ballin-data:

@@ -10,6 +10,8 @@ from .models import (
     revoke_token, is_token_revoked,
     increment_success, increment_fail,
 )
+from .profile_utils import build_profile
+from .mlcore import get_mlcore
 
 auth_bp = Blueprint("auth", __name__)
 
@@ -78,8 +80,22 @@ def register():
     if role not in VALID_ROLES:
         increment_fail()
         return _err(400, "Role must be 'player' or 'scout'")
+
+    # Build the role-specific profile (player stats -> frozen-order vector, or
+    # scout org + saved need). A bad profile is a client error, not a 500.
+    profile, profile_err = build_profile(role, data.get("profile"))
+    if profile_err is not None:
+        increment_fail()
+        return _err(400, profile_err)
+
+    # Surface the player's archetype at registration time — a single call to the
+    # ML-core singleton (stub until Dev A loads the real clustering model), never
+    # reloaded per request. CLAUDE.md §5 / Week-2 roadmap.
+    if role == "player":
+        profile["archetype"] = get_mlcore().archetype(profile["vector"])
+
     hashed = generate_password_hash(password)
-    if not add_user(username, hashed, role):
+    if not add_user(username, hashed, role, profile):
         increment_fail()
         return _err(409, "Username already exists")
     increment_success()

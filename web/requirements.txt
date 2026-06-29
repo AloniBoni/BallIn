@@ -2,6 +2,7 @@
 --extra-index-url https://pypi.org/simple/
 flask
 PyJWT
+SQLAlchemy
 Pillow
 torch
 torchvision

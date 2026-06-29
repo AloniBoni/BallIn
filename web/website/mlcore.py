@@ -20,6 +20,13 @@ _instance: "MLCore | None" = None
 
 # Number of features in a standardized player vector. Frozen — see schema above.
 FEATURE_DIM = 9
+# Single source of truth for vector order. Everything (registration, seeding,
+# scout needs) builds vectors in THIS order. Frozen — see schema above.
+FEATURE_ORDER = [
+    "height", "position_encoded", "PTS", "REB", "AST",
+    "FG_pct", "3PT_pct", "usage", "defensive_rating",
+]
+assert len(FEATURE_ORDER) == FEATURE_DIM
 
 
 class MLCore:
@@ -47,6 +54,16 @@ class MLCore:
         STUB: fixed label until the clustering model is loaded.
         """
         return "3&D wing"
+
+    def need_to_vector(self, need: str) -> list[float]:
+        """Map a scout's free-text need (e.g. "3&D wing") to a target feature vector.
+
+        This is the bridge that makes the fit-scorer symmetric: a text need becomes
+        a vector that fit_score can compare against any player vector.
+        STUB: returns a neutral zero vector until the local archetype dictionary
+        (tag -> target vector, with optional fuzzy tag match) is loaded by Dev A.
+        """
+        return [0.0] * FEATURE_DIM
 
     def fit_score(self, need: list[float], vector: list[float]) -> float:
         """Symmetric fit-scorer: how well a player vector matches a target need vector.
