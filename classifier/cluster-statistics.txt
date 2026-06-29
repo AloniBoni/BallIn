@@ -1,0 +1,550 @@
+
+========================================
+--- Cluster 0 Profile ---
+Cluster Size: 149 rows (1.4% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                    player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+     Tracy McGrady 2000-01 26.8  7.5  4.6  1.5  1.5    0.355   0.8   0.457 10.2
+Karl-Anthony Towns 2016-17 25.1 12.3  2.7  0.7  1.3    0.367   1.2   0.542  9.8
+      Chris Webber 1999-00 24.5 10.5  4.6  1.6  1.7    0.284   0.4   0.483 10.0
+      Chris Webber 2001-02 24.5 10.1  4.8  1.7  1.4    0.263   0.1   0.495  9.9
+     Anthony Davis 2015-16 24.3 10.3  1.9  1.3  2.0    0.324   0.6   0.493  9.2
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+cluster      0.000000        10.687610        -100.0
+OREB         2.961403         1.627152          82.0
+BLK          1.103119         0.616148          79.0
+REB         10.064164         6.040177          66.6
+FTA          4.821777         2.998241          60.8
+DREB         7.098725         4.416783          60.7
+FTM          3.430254         2.241846          53.0
+FG3M         0.608190         1.205922         -49.6
+FGM          7.608799         5.105442          49.0
+FG3A         1.903837         3.478597         -45.3
+
+========================================
+--- Cluster 1 Profile ---
+Cluster Size: 219 rows (2.0% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                  player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+   Derrick White 2023-24 15.2  4.2  5.2  1.0  1.2    0.396   2.7   0.461  5.3
+Lance Stephenson 2013-14 13.8  7.2  4.6  0.7  0.1    0.352   1.1   0.491  5.5
+   Mikal Bridges 2020-21 13.5  4.3  2.1  1.1  0.9    0.425   1.9   0.543  5.0
+   Grayson Allen 2023-24 13.5  3.9  3.0  0.9  0.6    0.461   2.7   0.499  4.5
+      Boris Diaw 2008-09 13.2  5.3  4.1  0.8  0.7    0.414   0.9   0.507  5.5
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+cluster      1.000000        10.687610         -90.6
+FG3M         1.957719         1.205922          62.3
+FTA          1.644597         2.998241         -45.1
+FG3A         5.041970         3.478597          44.9
+FTM          1.240023         2.241846         -44.7
+FG3_PCT      0.384521         0.275373          39.6
+OREB         1.046081         1.627152         -35.7
+REB          5.067743         6.040177         -16.1
+FGA          9.986181        11.635468         -14.2
+FGM          4.437582         5.105442         -13.1
+
+========================================
+--- Cluster 2 Profile ---
+Cluster Size: 191 rows (1.8% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                   player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+       Al Horford 2024-25  9.0  6.2  2.1  0.6  0.9    0.363   1.9   0.423  3.3
+Metta World Peace 2010-11  8.5  3.3  2.1  1.5  0.4    0.356   1.0   0.397  3.2
+    Kyle Anderson 2018-19  8.0  5.8  3.0  1.3  0.9    0.265   0.2   0.543  3.5
+    Kyle Anderson 2017-18  7.9  5.4  2.7  1.6  0.8    0.333   0.3   0.527  3.1
+     Caleb Martin 2024-25  7.9  3.9  2.1  1.0  0.5    0.359   0.8   0.424  2.9
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+cluster      2.000000        10.687610         -81.3
+FTM          1.013997         2.241846         -54.8
+FTA          1.444545         2.998241         -51.8
+PTS          8.970896        13.650670         -34.3
+FGM          3.365779         5.105442         -34.1
+FGA          8.055098        11.635468         -30.8
+AST          2.123736         2.954117         -28.1
+FG3_PCT      0.337974         0.275373          22.7
+PF           1.589529         1.861020         -14.6
+OREB         1.442946         1.627152         -11.3
+
+========================================
+--- Cluster 3 Profile ---
+Cluster Size: 221 rows (2.0% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                    player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+      Khyri Thomas 2020-21 16.4  3.6  5.0  1.8  1.2    0.333   1.8   0.485  6.4
+       Vander Blue 2014-15 11.0  4.5  4.0  1.5  0.0    0.200   1.0   0.300  4.5
+Michael Porter Jr. 2021-22  9.9  6.6  1.9  1.1  0.2    0.208   1.1   0.359  4.1
+     Voshon Lenard 2004-05  9.7  2.0  2.0  0.3  0.0    0.333   1.3   0.385  3.3
+    Antoine Walker 2006-07  8.5  4.3  1.7  0.6  0.2    0.275   1.1   0.397  3.4
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+FG3A         6.736300         3.478597          93.6
+cluster      3.000000        10.687610         -71.9
+FG3M         1.999339         1.205922          65.8
+PF           0.781448         1.861020         -58.0
+OREB         1.223591         1.627152         -24.8
+BLK          0.463949         0.616148         -24.7
+FGA         13.823216        11.635468          18.8
+FG_PCT       0.369416         0.439190         -15.9
+STL          0.969755         1.111551         -12.8
+REB          5.336888         6.040177         -11.6
+
+========================================
+--- Cluster 4 Profile ---
+Cluster Size: 235 rows (2.2% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                        player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+          Chris Webber 1998-99 20.0 13.0  4.1  1.4  2.1    0.118   0.1   0.486  9.0
+          Shawn Marion 2001-02 19.1  9.9  2.0  1.8  1.1    0.393   0.6   0.469  8.1
+        Josh Childress 2006-07 13.0  6.2  2.3  1.1  0.7    0.338   0.5   0.504  4.7
+Michael Kidd-Gilchrist 2015-16 12.7  6.4  1.3  0.4  0.4    0.429   0.4   0.541  4.7
+            Taj Gibson 2017-18 12.2  7.1  1.2  0.8  0.7    0.200   0.1   0.577  5.2
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+FG3M         0.374476         1.205922         -68.9
+FG3A         1.187609         3.478597         -65.9
+OREB         2.670490         1.627152          64.1
+cluster      4.000000        10.687610         -62.6
+BLK          0.968757         0.616148          57.2
+AST          1.896819         2.954117         -35.8
+REB          7.852815         6.040177          30.0
+DREB         5.194825         4.416783          17.6
+FG3_PCT      0.318911         0.275373          15.8
+FGA          9.908666        11.635468         -14.8
+
+========================================
+--- Cluster 5 Profile ---
+Cluster Size: 193 rows (1.8% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                    player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+       Baron Davis 2001-02 18.1  4.3  8.5  2.1  0.6    0.356   2.1   0.417  6.8
+Quentin Richardson 2003-04 17.2  6.4  2.1  1.0  0.3    0.352   1.8   0.398  6.5
+  Kennedy Chandler 2025-26 15.0  3.4  6.7  1.0  0.2    0.395   1.4   0.445  5.5
+         Tre Jones 2025-26 14.1  3.1  5.4  1.2  0.2    0.315   0.6   0.553  5.2
+     Kerry Kittles 1998-99 12.9  4.2  2.5  1.7  0.6    0.316   1.1   0.370  4.9
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+cluster      5.000000        10.687610         -53.2
+OREB         1.019805         1.627152         -37.3
+BLK          0.406121         0.616148         -34.1
+REB          4.503957         6.040177         -25.4
+AST          3.650396         2.954117          23.6
+DREB         3.536477         4.416783         -19.9
+STL          1.315179         1.111551          18.3
+PF           1.548705         1.861020         -16.8
+FG3A         4.062059         3.478597          16.8
+FG3_PCT      0.312368         0.275373          13.4
+
+========================================
+--- Cluster 6 Profile ---
+Cluster Size: 567 rows (5.2% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                   player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+LaMarcus Aldridge 2013-14 23.2 11.1  2.6  0.9  1.0    0.200   0.0   0.458  9.4
+     Al Jefferson 2008-09 23.1 11.0  1.6  0.8  1.7    0.000   0.0   0.497  9.7
+LaMarcus Aldridge 2010-11 21.8  8.8  2.1  1.0  1.2    0.174   0.0   0.500  8.7
+LaMarcus Aldridge 2011-12 21.7  8.0  2.4  0.9  0.8    0.182   0.0   0.512  8.8
+  Antonio McDyess 1998-99 21.2 10.7  1.6  1.5  2.3    0.111   0.0   0.471  8.3
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+FG3M         0.000000         1.205922        -100.0
+FG3A         0.204243         3.478597         -94.1
+OREB         2.755346         1.627152          69.3
+BLK          0.970287         0.616148          57.5
+cluster      6.000000        10.687610         -43.9
+REB          8.411138         6.040177          39.3
+FG3_PCT      0.178268         0.275373         -35.3
+AST          1.976033         2.954117         -33.1
+PF           2.431393         1.861020          30.6
+FTA          3.860055         2.998241          28.7
+
+========================================
+--- Cluster 7 Profile ---
+Cluster Size: 2604 rows (24.0% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+   Kobe Bryant 2009-10 27.0  5.4  5.0  1.5  0.3    0.329   1.4   0.456  9.8
+     Glen Rice 1996-97 26.8  4.0  2.0  0.9  0.3    0.470   2.6   0.477  9.1
+Mitch Richmond 1996-97 25.9  3.9  4.2  1.5  0.3    0.428   2.5   0.454  8.9
+  Vince Carter 1999-00 25.7  5.8  3.9  1.3  1.1    0.403   1.2   0.465  9.6
+Gilbert Arenas 2004-05 25.5  4.7  5.1  1.7  0.3    0.365   2.6   0.431  8.2
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+FG3M         1.976173         1.205922          63.9
+FG3A         5.327697         3.478597          53.2
+OREB         0.858386         1.627152         -47.2
+BLK          0.357918         0.616148         -41.9
+cluster      7.000000        10.687610         -34.5
+FG3_PCT      0.369387         0.275373          34.1
+REB          4.461485         6.040177         -26.1
+AST          3.617331         2.954117          22.5
+DREB         3.603100         4.416783         -18.4
+PTS         15.616463        13.650670          14.4
+
+========================================
+--- Cluster 8 Profile ---
+Cluster Size: 320 rows (3.0% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                   player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+  Terrell Brandon 1996-97 19.5  3.9  6.3  1.8  0.4    0.373   1.3   0.438  7.4
+      Jason Terry 2001-02 19.3  3.5  5.7  1.8  0.2    0.387   2.2   0.430  6.7
+ Wally Szczerbiak 2005-06 19.0  4.3  3.0  0.6  0.3    0.400   1.4   0.487  6.8
+Michael Dickerson 1999-00 18.2  3.4  2.5  1.4  0.5    0.409   1.5   0.436  6.8
+      Mo Williams 2008-09 17.8  3.4  4.1  0.9  0.1    0.436   2.3   0.467  6.5
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+BLK          0.223847         0.616148         -63.7
+OREB         0.647933         1.627152         -60.2
+AST          4.626577         2.954117          56.6
+REB          3.580676         6.040177         -40.7
+DREB         2.956976         4.416783         -33.1
+FG3M         1.590474         1.205922          31.9
+FG3_PCT      0.359619         0.275373          30.6
+FG3A         4.389171         3.478597          26.2
+cluster      8.000000        10.687610         -25.1
+STL          1.252595         1.111551          12.7
+
+========================================
+--- Cluster 9 Profile ---
+Cluster Size: 268 rows (2.5% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                   player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+Jaren Jackson Jr. 2023-24 22.5  5.5  2.3  1.2  1.6    0.320   1.8   0.444  7.8
+     Shawn Marion 2005-06 21.8 11.8  1.8  2.0  1.7    0.331   1.2   0.525  8.8
+    Dirk Nowitzki 2003-04 21.8  8.7  2.7  1.2  1.4    0.341   1.3   0.462  7.9
+     Shawn Marion 2002-03 21.2  9.5  2.4  2.3  1.2    0.387   1.7   0.452  8.2
+    Rashard Lewis 2004-05 20.5  5.5  1.3  1.1  0.9    0.400   2.4   0.462  7.5
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+BLK          0.943031         0.616148          53.1
+FG3M         1.703132         1.205922          41.2
+DREB         6.182897         4.416783          40.0
+FG3A         4.715949         3.478597          35.6
+REB          8.176117         6.040177          35.4
+FG3_PCT      0.358530         0.275373          30.2
+FGM          6.627316         5.105442          29.8
+PTS         17.695394        13.650670          29.6
+OREB         1.996320         1.627152          22.7
+FTM          2.747777         2.241846          22.6
+
+========================================
+--- Cluster 10 Profile ---
+Cluster Size: 200 rows (1.8% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                 player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+  Rashard Lewis 2008-09 17.7  5.7  2.6  1.0  0.6    0.397   2.8   0.439  6.1
+    Gary Harris 2017-18 17.5  2.6  2.9  1.8  0.2    0.396   2.3   0.485  6.6
+  Rashard Lewis 2001-02 16.8  7.0  1.7  1.5  0.6    0.389   1.7   0.468  6.4
+     OG Anunoby 2022-23 16.8  5.0  2.0  1.9  0.7    0.387   2.1   0.476  6.3
+Morris Peterson 2005-06 16.8  4.6  2.3  1.3  0.2    0.395   2.2   0.436  5.8
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+FG3M         2.319298         1.205922          92.3
+FG3A         6.100374         3.478597          75.4
+OREB         0.994040         1.627152         -38.9
+FG3_PCT      0.380635         0.275373          38.2
+FTA          1.891768         2.998241         -36.9
+AST          1.929311         2.954117         -34.7
+FTM          1.480351         2.241846         -34.0
+BLK          0.465552         0.616148         -24.4
+REB          5.049215         6.040177         -16.4
+DREB         4.087555         4.416783          -7.5
+
+========================================
+--- Cluster 11 Profile ---
+Cluster Size: 200 rows (1.8% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                   player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+      CJ McCollum 2021-22 22.1  4.3  5.1  1.1  0.4    0.388   2.9   0.460  8.6
+ Payton Pritchard 2025-26 17.0  3.9  5.2  0.7  0.1    0.377   2.7   0.464  6.4
+Bogdan Bogdanović 2023-24 16.9  3.4  3.1  1.2  0.3    0.374   3.0   0.428  6.0
+   Reggie Jackson 2021-22 16.8  3.6  4.8  0.7  0.2    0.326   2.2   0.392  6.4
+Bogdan Bogdanović 2020-21 16.4  3.6  3.3  1.1  0.3    0.438   3.3   0.473  6.1
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+FG3M         2.958748         1.205922         145.4
+FG3A         8.205223         3.478597         135.9
+OREB         0.715675         1.627152         -56.0
+BLK          0.324255         0.616148         -47.4
+FTA          1.767274         2.998241         -41.1
+FTM          1.438620         2.241846         -35.8
+REB          4.093520         6.040177         -32.2
+FG3_PCT      0.360685         0.275373          31.0
+PF           1.330000         1.861020         -28.5
+DREB         3.401741         4.416783         -23.0
+
+========================================
+--- Cluster 12 Profile ---
+Cluster Size: 122 rows (1.1% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                    player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+    Zavier Simpson 2021-22 11.0  5.3  7.5  1.3  1.0    0.125   0.3   0.365  4.8
+       Chris Duhon 2009-10  7.4  2.7  5.6  0.9  0.0    0.349   1.3   0.373  2.5
+Mahmoud Abdul-Rauf 1997-98  7.3  1.2  1.9  0.5  0.0    0.161   0.2   0.377  3.3
+ DeShawn Stevenson 2008-09  6.6  2.4  3.1  0.7  0.1    0.271   1.1   0.312  2.3
+   Frank Mason III 2020-21  6.3  3.0  3.0  0.0  0.0    0.400   0.5   0.375  2.3
+========================================
+
+      Cluster_Mean  Population_Mean  Difference_%
+BLK       0.236826         0.616148         -61.6
+AST       4.725874         2.954117          60.0
+OREB      0.793883         1.627152         -51.2
+FTA       1.570459         2.998241         -47.6
+FTM       1.176826         2.241846         -47.5
+PF        1.088525         1.861020         -41.5
+REB       3.548273         6.040177         -41.3
+DREB      2.765836         4.416783         -37.4
+PTS       9.428482        13.650670         -30.9
+FGM       3.609337         5.105442         -29.3
+
+========================================
+--- Cluster 13 Profile ---
+Cluster Size: 1387 rows (12.8% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                 player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+  Carlos Boozer 2007-08 21.1 10.4  2.9  1.2  0.5      0.0   0.0   0.547  8.8
+  Carlos Boozer 2006-07 20.9 11.7  3.0  0.9  0.3      0.0   0.0   0.561  8.7
+Antonio McDyess 2000-01 20.8 12.1  2.1  0.6  1.5      0.0   0.0   0.495  8.2
+    Brook Lopez 2010-11 20.4  6.0  1.6  0.6  1.5      0.0   0.0   0.492  7.9
+    Elton Brand 2000-01 20.1 10.1  3.2  1.0  1.6      0.0   0.0   0.475  7.8
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+FG3M         0.000000         1.205922        -100.0
+FG3_PCT      0.000000         0.275373        -100.0
+FG3A         0.000000         3.478597        -100.0
+OREB         3.239661         1.627152          99.1
+BLK          1.115375         0.616148          81.0
+AST          1.419196         2.954117         -52.0
+REB          9.170125         6.040177          51.8
+DREB         5.934228         4.416783          34.4
+STL          0.870515         1.111551         -21.7
+cluster     13.000000        10.687610          21.6
+
+========================================
+--- Cluster 14 Profile ---
+Cluster Size: 2455 rows (22.6% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                  player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+Latrell Sprewell 1997-98 21.4  3.6  4.9  1.4  0.4    0.188   0.6   0.397  7.9
+    Shawn Marion 2003-04 19.0  9.3  2.7  2.1  1.3    0.340   1.1   0.440  7.5
+ Derrick Coleman 1997-98 17.6  9.9  2.5  0.8  1.2    0.265   0.4   0.411  6.0
+     Paul Pierce 1998-99 16.5  6.4  2.4  1.7  1.0    0.412   1.8   0.439  5.9
+   Derrick White 2025-26 16.5  4.4  5.4  1.1  1.3    0.327   2.7   0.394  5.7
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+cluster     14.000000        10.687610          31.0
+FTM          1.804581         2.241846         -19.5
+FTA          2.467857         2.998241         -17.7
+FG3_PCT      0.316031         0.275373          14.8
+FGM          4.414419         5.105442         -13.5
+PF           1.614297         1.861020         -13.3
+PTS         11.831668        13.650670         -13.3
+OREB         1.457639         1.627152         -10.4
+FGA         10.508766        11.635468          -9.7
+STL          1.207381         1.111551           8.6
+
+========================================
+--- Cluster 15 Profile ---
+Cluster Size: 149 rows (1.4% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+               player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+ Andre Miller 2007-08 17.0  4.0  6.9  1.3  0.1    0.088   0.0   0.492  6.9
+ Andre Miller 2003-04 14.8  4.5  6.1  1.7  0.3    0.185   0.1   0.457  5.2
+ Andre Miller 2009-10 14.0  3.2  5.4  1.1  0.1    0.200   0.2   0.445  4.9
+Allen Iverson 2009-10 13.8  2.8  4.0  0.7  0.1    0.360   0.3   0.430  4.9
+ Andre Miller 2004-05 13.6  4.1  6.9  1.5  0.1    0.154   0.1   0.477  5.2
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+AST          5.600491         2.954117          89.6
+BLK          0.162795         0.616148         -73.6
+FG3M         0.390905         1.205922         -67.6
+FG3A         1.263818         3.478597         -63.7
+OREB         0.768559         1.627152         -52.8
+cluster     15.000000        10.687610          40.3
+REB          3.705050         6.040177         -38.7
+DREB         2.940016         4.416783         -33.4
+PTS         10.739461        13.650670         -21.3
+FGM          4.094684         5.105442         -19.8
+
+========================================
+--- Cluster 16 Profile ---
+Cluster Size: 127 rows (1.2% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                     player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+          Pau Gasol 2016-17 12.4  7.8  2.3  0.4  1.1    0.538   0.9   0.502  4.7
+     Jerryd Bayless 2016-17 11.0  4.0  4.3  0.0  0.0    0.400   0.7   0.344  3.7
+    Derrick Coleman 2000-01  8.1  5.4  1.1  0.3  0.6    0.392   0.6   0.380  2.9
+Sindarius Thornwell 2019-20  8.0  2.0  2.0  0.5  0.5    0.500   1.0   0.545  3.0
+         Alonzo Gee 2009-10  7.4  3.0  0.6  0.6  0.1    0.778   0.6   0.475  2.5
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+PF           0.848819         1.861020         -54.4
+cluster     16.000000        10.687610          49.7
+FTA          4.198725         2.998241          40.0
+FG3A         2.303134         3.478597         -33.8
+FG3M         0.837467         1.205922         -30.6
+FTM          2.893125         2.241846          29.1
+OREB         2.075334         1.627152          27.5
+FG3_PCT      0.347236         0.275373          26.1
+AST          2.395861         2.954117         -18.9
+BLK          0.729696         0.616148          18.4
+
+========================================
+--- Cluster 17 Profile ---
+Cluster Size: 172 rows (1.6% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                 player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+Hakeem Olajuwon 1996-97 23.2  9.2  3.0  1.5  2.2    0.313   0.1   0.510  9.3
+  Kevin Garnett 2006-07 22.4 12.8  4.1  1.2  1.7    0.214   0.2   0.476  8.4
+  Kevin Garnett 2004-05 22.2 13.5  5.7  1.5  1.4    0.240   0.1   0.502  8.3
+    Dwyane Wade 2011-12 22.1  4.8  4.6  1.7  1.3    0.268   0.3   0.497  8.5
+  Kevin Garnett 2000-01 22.0 11.4  5.0  1.4  1.8    0.288   0.2   0.477  8.7
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+FG3M         0.202217         1.205922         -83.2
+FG3A         0.681928         3.478597         -80.4
+cluster     17.000000        10.687610          59.1
+FTM          3.539555         2.241846          57.9
+FTA          4.655025         2.998241          55.3
+BLK          0.932111         0.616148          51.3
+OREB         2.415348         1.627152          48.4
+PF           2.683140         1.861020          44.2
+REB          8.224941         6.040177          36.2
+DREB         5.807940         4.416783          31.5
+
+========================================
+--- Cluster 18 Profile ---
+Cluster Size: 303 rows (2.8% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+              player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+Vince Carter 2000-01 27.6  5.5  3.9  1.5  1.1    0.408   2.2   0.460 10.2
+LeBron James 2004-05 27.2  7.4  7.2  2.2  0.7    0.351   1.4   0.472  9.9
+   Ray Allen 2006-07 26.4  4.5  4.1  1.5  0.2    0.372   3.0   0.438  9.2
+Tyrese Maxey 2024-25 26.3  3.3  6.1  1.8  0.4    0.337   3.1   0.437  9.2
+ Paul Pierce 2001-02 26.1  6.9  3.2  1.9  1.0    0.404   2.6   0.442  8.6
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+FG3M         2.405370         1.205922          99.5
+FG3A         6.540216         3.478597          88.0
+FTM          3.883441         2.241846          73.2
+cluster     18.000000        10.687610          68.4
+PTS         21.507901        13.650670          57.6
+FTA          4.685163         2.998241          56.3
+OREB         0.826133         1.627152         -49.2
+FGM          7.611464         5.105442          49.1
+FGA         17.197470        11.635468          47.8
+AST          4.357948         2.954117          47.5
+
+========================================
+--- Cluster 19 Profile ---
+Cluster Size: 136 rows (1.3% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                   player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+         Jay Huff 2022-23  7.3  3.0  1.4  0.4  0.6    0.500   0.9   0.600  2.1
+Justin Champagnie 2023-24  5.9  3.5  1.3  0.7  0.6    0.289   0.9   0.410  2.1
+   Gary Payton II 2023-24  5.5  2.6  1.1  0.9  0.4    0.364   0.5   0.563  2.3
+   Josh McRoberts 2016-17  4.9  3.4  2.3  0.5  0.2    0.419   0.6   0.373  2.0
+     Jared Rhoden 2023-24  4.9  1.9  0.8  0.2  0.8    0.387   0.7   0.500  1.9
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+cluster     19.000000        10.687610          77.8
+PF           0.925735         1.861020         -50.3
+FTA          1.670439         2.998241         -44.3
+FTM          1.274120         2.241846         -43.2
+OREB         2.100024         1.627152          29.1
+PTS          9.886895        13.650670         -27.6
+FGM          3.872455         5.105442         -24.2
+AST          2.301615         2.954117         -22.1
+FG3M         0.963400         1.205922         -20.1
+BLK          0.734823         0.616148          19.3
+
+========================================
+--- Cluster 20 Profile ---
+Cluster Size: 263 rows (2.4% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                 player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+ Antawn Jamison 2000-01 24.9  8.7  2.0  1.4  0.3    0.302   0.8   0.442  9.8
+  Pascal Siakam 2022-23 24.2  7.8  5.8  0.9  0.5    0.324   1.3   0.480  8.9
+Carmelo Anthony 2014-15 24.2  6.6  3.1  1.0  0.4    0.341   1.5   0.444  9.0
+  Julius Randle 2023-24 24.0  9.2  5.0  0.5  0.3    0.311   1.7   0.472  8.6
+   De'Aaron Fox 2021-22 23.2  3.9  5.6  1.2  0.4    0.297   1.3   0.473  8.7
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+cluster     20.000000        10.687610          87.1
+FTM          3.661642         2.241846          63.3
+FTA          4.725110         2.998241          57.6
+FG3M         0.733508         1.205922         -39.2
+BLK          0.415814         0.616148         -32.5
+FG3A         2.376742         3.478597         -31.7
+AST          3.866708         2.954117          30.9
+FGM          6.685476         5.105442          30.9
+PTS         17.770004        13.650670          30.2
+FGA         14.974463        11.635468          28.7
+
+========================================
+--- Cluster 21 Profile ---
+Cluster Size: 358 rows (3.3% of population)
+
+Top 5 Players (Sorted by PTS, REB, AST, STL, BLK, FG3_PCT, FG3M, FG_PCT, FGM):
+                  player  PTS  REB  AST  STL  BLK  FG3_PCT  FG3M  FG_PCT  FGM
+      Grant Hill 2001-02 16.8  8.9  4.6  0.6  0.3      0.0   0.0   0.426  5.9
+     T.J. Warren 2020-21 15.5  3.5  1.3  0.5  0.0      0.0   0.0   0.529  6.8
+Anderson Varejao 2012-13 14.1 14.4  3.4  1.5  0.6      0.0   0.0   0.478  5.5
+       Ndudi Ebi 2004-05 13.5  8.0  0.5  0.5  0.5      0.0   0.0   0.524  5.5
+     Joakim Noah 2012-13 11.9 11.1  4.0  1.2  2.1      0.0   0.0   0.481  4.6
+========================================
+
+         Cluster_Mean  Population_Mean  Difference_%
+FG3M         0.000000         1.205922        -100.0
+FG3_PCT      0.000000         0.275373        -100.0
+cluster     21.000000        10.687610          96.5
+FG3A         0.590709         3.478597         -83.0
+OREB         2.403716         1.627152          47.7
+PF           1.328492         1.861020         -28.6
+PTS         10.284030        13.650670         -24.7
+FGM          4.083685         5.105442         -20.0
+REB          7.185247         6.040177          19.0
+BLK          0.720567         0.616148          16.9
